@@ -1,0 +1,110 @@
+Here are several DNA sequences you can use to test the restriction enzyme digestion program, along with suggested enzymes and their recognition sites:
+
+## Example 1: Short Test Sequence (Easy to follow)
+**DNA Sequence:**
+```
+AAGCTTGAATTCGGATCCCTGCAGAAGCTTGAATTC
+```
+
+**Suggested Enzymes to test:**
+- **HindIII**: Recognition site `AAGCTT`, cut position `1`
+- **EcoRI**: Recognition site `GAATTC`, cut position `1` 
+- **BamHI**: Recognition site `GGATCC`, cut position `1`
+- **PstI**: Recognition site `CTGCAG`, cut position `5`
+
+*This sequence contains multiple restriction sites, so you'll see several fragments.*
+
+## Example 2: Plasmid-like Sequence
+**DNA Sequence:**
+```
+GAATTCGCGGCCGCAAGCTTGTCGACCTGCAGGGATCCACTAGTCCAGTGTGGTGGAATTCGCGGCCGCAAGCTTGTCGACCTGCAGGGATCCACTAGTCCAGTGTGGTG
+```
+
+**Suggested Enzymes:**
+- **EcoRI**: Recognition site `GAATTC`, cut position `1`
+- **NotI**: Recognition site `GCGGCCGC`, cut position `2`
+- **HindIII**: Recognition site `AAGCTT`, cut position `1`
+- **SalI**: Recognition site `GTCGAC`, cut position `1`
+
+## Example 3: Sequence with Blunt-End Cutters
+**DNA Sequence:**
+```
+CCCGGGATATCGAATTCCCCGGGGATATCGAATTCCCCGGGATATC
+```
+
+**Suggested Enzymes:**
+- **SmaI**: Recognition site `CCCGGG`, cut position `3` (blunt cutter)
+- **EcoRV**: Recognition site `GATATC`, cut position `3` (blunt cutter)
+- **EcoRI**: Recognition site `GAATTC`, cut position `1` (sticky ends)
+
+## Example 4: Lambda Phage DNA Fragment
+**DNA Sequence:**
+```
+GGGATCCAAGCTTGCATGCCTGCAGGTCGACTCTAGAGGATCCCCGGGTACCGAGCTCGAATTCAGATCTGGATCCAAGCTTGCATGCCTGCAGGTCGACTCTAGAGGATCCCCGGGTACCGAGCTCGAATTCAGATCT
+```
+
+**Suggested Enzymes:**
+- **BamHI**: Recognition site `GGATCC`, cut position `1`
+- **HindIII**: Recognition site `AAGCTT`, cut position `1`
+- **EcoRI**: Recognition site `GAATTC`, cut position `1`
+- **XbaI**: Recognition site `TCTAGA`, cut position `1`
+
+## Example 5: Simple Palindromic Sequence
+**DNA Sequence:**
+```
+GAATTCAATTCGAATTCAATTC
+```
+
+**Suggested Enzyme:**
+- **EcoRI**: Recognition site `GAATTC`, cut position `1`
+
+*This will create identical fragments.*
+
+## Example 6: No Restriction Sites (Control)
+**DNA Sequence:**
+```
+ATGCATGCATGCATGCATGCATGCATGC
+```
+
+**Try any enzyme** - this sequence has no common restriction sites, so it should remain uncut.
+
+## Example 7: Complex Multi-Enzyme Test
+**DNA Sequence:**
+```
+AAGCTTGAATTCGGATCCCTCGAGCCCGGGCATGCCTGCAGTCTAGAAAGCTTGAATTCGGATCCCTCGAGCCCGGGCATGCCTGCAGTCTAGA
+```
+
+**Multiple Enzymes to test together:**
+- **HindIII**: `AAGCTT`, cut position `1`
+- **EcoRI**: `GAATTC`, cut position `1`
+- **XhoI**: `CTCGAG`, cut position `1`
+- **SmaI**: `CCCGGG`, cut position `3`
+
+## Example 8: Asymmetric Cutter Test
+**DNA Sequence:**
+```
+CTGCAGCTGCAGCTGCAGCTGCAG
+```
+
+**Suggested Enzyme:**
+- **PstI**: Recognition site `CTGCAG`, cut position `5`, 3' cut position `1`
+
+*This creates 5' overhangs.*
+
+## Testing Tips:
+
+1. **Start with Example 1** - it's short and easy to verify manually
+2. **Try single enzymes first**, then test multiple enzymes together
+3. **Use Example 6** to verify the program handles sequences with no cuts
+4. **Test different overhang types** using Examples 3 and 8
+5. **For manual verification**: Count the bases to check if cut positions are correct
+
+## Common Recognition Sequences Reference:
+- **EcoRI**: `GAATTC` (cuts between G and AATTC)
+- **BamHI**: `GGATCC` (cuts between G and GATCC)  
+- **HindIII**: `AAGCTT` (cuts between A and AGCTT)
+- **SmaI**: `CCCGGG` (cuts in middle - blunt ends)
+- **PstI**: `CTGCAG` (cuts between CTGCA and G)
+- **XhoI**: `CTCGAG` (cuts between C and TCGAG)
+- **NotI**: `GCGGCCGC` (8-base cutter, cuts between GC and GGCCGC)
+
